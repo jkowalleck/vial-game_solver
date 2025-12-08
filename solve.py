@@ -1,8 +1,8 @@
 from src import EMPTY_VIAL, validate, solve
 
 vials = [
-    'ASDF',
-    'ASDF',
+    'AADF',
+    'SSDF',
     ['A', 'S', 'D', 'F'],
     'ASDF',
     EMPTY_VIAL,
