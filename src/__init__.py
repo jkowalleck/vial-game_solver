@@ -89,7 +89,7 @@ def _solve(vials: T_game_state, tried: set) -> T_Solution:
     print_vials(vials)
     completes = tuple(v for v, vial in enumerate(vials) if vial_complete(vial))
     if len(completes) >= VIAL_SIZE:
-        return (-1, -1),
+        return (-1,-1),
     not_full = tuple(v for v, vial in enumerate(vials) if vial[0] is None)
     tops = tuple(map(vial_topmost_item, vials))
     options: list[T_Step, ...] = []
@@ -125,7 +125,7 @@ def _solve(vials: T_game_state, tried: set) -> T_Solution:
         tried.add(vials_next_h)
         print(f'{f} --> {t}')
         if solved := _solve(vials_next, tried):
-            return (f, t), solved
+            return (f, t), *solved
         print('< back <')
     return None
 
