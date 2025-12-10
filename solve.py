@@ -1,15 +1,19 @@
-from src import EMPTY_VIAL, validate, solve
+from src import EMPTY_VIAL, solve
 
-vials = [
-    'AADF',
-    'SSDF',
-    ['A', 'S', 'D', 'F'],
-    'ASDF',
+vials = (
+    '0178',
+    '1590',
+    '0186',
+    '2576',
+    '2549',
+    '3486',
+    '4781',
+    '5290',
+    '6439',
+    '3276',
     EMPTY_VIAL,
     EMPTY_VIAL,
-    EMPTY_VIAL,
-    EMPTY_VIAL,
-]
+)
 
-validate(vials)
-solve(vials)
+solved = solve(vials)
+print('solution', solved)
