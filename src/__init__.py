@@ -86,7 +86,7 @@ T_Solution = Iterable[T_Step, ...] | None
 
 
 def _solve(vials: T_game_state, tried: set) -> T_Solution:
-    print_vials(vials)
+    # print_vials(vials)
     completes = tuple(v for v, vial in enumerate(vials) if vial_complete(vial))
     if len(completes) >= VIAL_SIZE:
         return (-1,-1),
@@ -123,10 +123,10 @@ def _solve(vials: T_game_state, tried: set) -> T_Solution:
             tried.add(vials_next_h)
             continue  # no new state, just a swap
         tried.add(vials_next_h)
-        print(f'{f} --> {t}')
+        # print(f'{f} --> {t}')
         if solved := _solve(vials_next, tried):
             return (f, t), *solved
-        print('< back <')
+        # print('< back <')
     return None
 
 

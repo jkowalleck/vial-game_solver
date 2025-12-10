@@ -17,7 +17,7 @@ class C(enum.Enum):
     PINK = enum.auto()
 
 
-lvl5 = (
+LEVEL5 = (
     (C.GREEN, C.ROYAL, C.BROWN, C.BLUE),
     (C.ROYAL, C.LULLABY, C.YELLOW, C.GREEN),
     (C.GREEN, C.ROYAL, C.BLUE, C.RED),
@@ -33,21 +33,4 @@ lvl5 = (
     EMPTY_VIAL,
 )
 
-other = (
-    (C.GREEN, C.ROYAL, C.BROWN, C.BLUE),
-    (C.ROYAL, C.LULLABY, C.YELLOW, C.GREEN),
-    (C.GREEN, C.ROYAL, C.BLUE, C.RED),
-    (C.LIGHTBLUE, C.LULLABY, C.BROWN, C.RED),
-    (C.LIGHTBLUE, C.LULLABY, C.PINK, C.YELLOW),
-    (C.LIGHTGREEN, C.PINK, C.BLUE, C.LIGHTGREEN),
-
-    (C.PINK, C.BROWN, C.BLUE, C.ROYAL),
-    (C.LULLABY, C.LIGHTBLUE, C.YELLOW, C.GREEN),
-    (C.RED, C.PINK, C.LIGHTGREEN, C.YELLOW),
-    (C.LIGHTGREEN, C.LIGHTBLUE, C.BROWN, C.RED),
-    EMPTY_VIAL,
-    EMPTY_VIAL,
-)
-
-solved = solve(other)
-print('solution', solved)
+print('solution', solve(LEVEL5))
