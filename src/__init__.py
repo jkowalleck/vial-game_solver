@@ -81,7 +81,7 @@ def vial_trans(f: T_VIAL, t: T_VIAL) -> Tuple[T_VIAL, T_VIAL]:
     return tuple(fill_left_nones(nf)), tuple(fill_left_nones(nt))
 
 
-T_Step = tuple[int, int]
+T_Step = Tuple[int, int]
 T_Solution = Union[Iterable[T_Step], None]
 
 
