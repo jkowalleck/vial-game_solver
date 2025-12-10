@@ -114,13 +114,14 @@ def _solve(vials: T_game_state, tried: set) -> T_Solution:
     for f, t in options:
         n_ = list(vials)
         n_[f], n_[t] = vial_trans(vials[f], vials[t])
-        if n_[t] == vials[f] and n_[f] == vials[t]:
-            continue  # no new state, just a swap
         vials_next: T_game_state = tuple(n_)
         del n_
         vials_next_h = hash(vials_next)
         if vials_next_h in tried:
             continue
+        if vials_next[t] == vials[f] and vials_next[f] == vials[t]:
+            tried.add(vials_next_h)
+            continue  # no new state, just a swap
         tried.add(vials_next_h)
         print(f'{f} --> {t}')
         if solved := _solve(vials_next, tried):
